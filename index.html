@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Butterfly</title>
+
+    <style>
+        .main {
+            transform: rotate3d(1, 0, 1, 10deg);
+            animation: runfly 3s infinite;
+            height: 260px;
+            margin-left: 100px;
+            margin-top: 100px;
+        }
+
+        .left {
+            border-radius: 30% 50% 25% 66%;
+            transform-origin: right;
+            animation: leftAnimation .6s infinite;
+            border: 2px dotted rgb(0, 0, 0, .2);
+            background-color: rgb(0, 0, 0, .2);
+        }
+
+        .center {
+            border: 2px dotted rgb(0, 0, 0, .2);
+            transform: rotate(90deg);
+            overflow: hidden;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .right {
+            border-radius: 50% 30% 66% 25%;
+            transform-origin: left;
+            animation: rightAnimation .6s infinite;
+            border: 2px dotted rgb(0, 0, 0, .2);
+            background-color: rgb(0, 0, 0, .2);
+        }
+
+        @keyframes leftAnimation {
+            0% {
+                transform: scaleX(2) scaleY(1.6) skewX(0deg) skewY(10deg);
+            }
+
+            50% {
+                transform: scaleX(1) scaleY(1.6) skewX(0deg) skewY(10deg);
+            }
+
+            100% {
+                transform: scaleX(2) scaleY(1.6) skewX(0deg) skewY(10deg);
+            }
+
+        }
+
+        @keyframes rightAnimation {
+            0% {
+                transform: scaleX(2) scaleY(1.6) skewX(0deg) skewY(-10deg);
+            }
+
+            50% {
+                transform: scaleX(1) scaleY(1.6) skewX(0deg) skewY(-10deg);
+            }
+
+            100% {
+                transform: scaleX(2) scaleY(1.6) skewX(0deg) skewY(-10deg);
+            }
+        }
+
+        @keyframes runfly {
+            0% {
+
+                left: 10px;
+                transform: rotate3d(1, 1, 1, 20deg);
+                margin-left: 200px;
+                margin-top: 150px;
+            }
+
+            25% {
+                left: 20px;
+                transform: rotate3d(1, 0, 1, 10deg);
+                margin-left: 300px;
+                margin-top: 100px;
+            }
+
+            50% {
+                left: 30px;
+                transform: rotate3d(1, 1, 1, 20deg);
+                margin-left: 400px;
+                margin-top: 150px;
+            }
+
+            75% {
+                left: 20px;
+                transform: rotate3d(1, 0, 1, 10deg);
+                margin-left: 300px;
+                margin-top: 100px;
+            }
+
+            100% {
+                left: 10px;
+                transform: rotate3d(1, 1, 1, 20deg);
+                margin-left: 200px;
+                margin-top: 150px;
+            }
+        }
+
+        @media screen and (max-width: 450px) {
+            .main {
+                transform: rotate3d(1, 0, 1, 10deg);
+                animation: runfly 3s infinite;
+                height: 160px;
+                margin-left: 0px;
+                margin-top: 100px;
+            }
+
+            @keyframes runfly {
+                0% {
+
+                    left: 10px;
+                    transform: rotate3d(1, 1, 1, 20deg);
+                    margin-left: 120px;
+                    margin-top: 150px;
+                }
+
+                25% {
+                    left: 20px;
+                    transform: rotate3d(1, 0, 1, 10deg);
+                    margin-left: 130px;
+                    margin-top: 100px;
+                }
+
+                50% {
+                    left: 30px;
+                    transform: rotate3d(1, 1, 1, 20deg);
+                    margin-left: 140px;
+                    margin-top: 150px;
+                }
+
+                75% {
+                    left: 20px;
+                    transform: rotate3d(1, 0, 1, 10deg);
+                    margin-left: 130px;
+                    margin-top: 100px;
+                }
+
+                100% {
+                    left: 10px;
+                    transform: rotate3d(1, 1, 1, 20deg);
+                    margin-left: 120px;
+                    margin-top: 150px;
+                }
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container my-4">
+        <div class="row bg-info">
+            <div class="col-md-4 bg-primary w-100 p-4 border-top border-dark"></div>
+            <div class="col-md-4 bg-secondary w-100 p-4 text-warning text-center">
+                <h4>Butterfly</h4>
+            </div>
+            <div class="col-md-4 bg-dark w-100 p-4 border-top  border-primary"></div>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="container my-5">
+        <div class="main w-25 bg-white position-relative">
+            <div class="left float-left position-absolute w-50 h-100 overflow-hidden"></div>
+            <div class="center"></div>
+            <div class="right float-right w-50 h-100"></div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
